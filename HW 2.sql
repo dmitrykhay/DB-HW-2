@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS employees (
+id SERIAL PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+department_id INTEGER NOT NULL REFERENCES departments(id),
+сhief_id INTEGER NOT NULL REFERENCES employees(id)
+);
+
+CREATE TABLE IF NOT EXISTS departments (
+id SERIAL PRIMARY KEY,
+name VARCHAR(30) NOT NULL
+);
